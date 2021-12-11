@@ -1,0 +1,31 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Database\Seeders\Aboleon\Framework;
+
+use DB;
+use Illuminate\Database\Seeder;
+
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('users')->insert([
+                [
+                    'name' => 'name',
+                    'first_name' => 'first_name',
+                    'last_name' => 'last_name',
+                    'password' => 'password',
+                    'email' => 'email',
+                    'email_verified_at' => now(),
+                ]
+            ]
+        );
+    }
+}

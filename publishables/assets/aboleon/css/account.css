@@ -1,0 +1,61 @@
+.gmapsbar input {
+    width: 100%;
+    border: 1px solid #D5D5D5 !important;
+}
+.radioboxes > div {
+    margin-right: 15px;
+}
+fieldset {
+    border: 1px solid #D5D5D5;
+    padding: 30px;
+}
+legend {
+    width: auto;
+    border-bottom:none;
+    padding: 7px 14px;
+    background: #007bbe;
+    color: white;
+    font-size: 16px;
+    &.sup {
+        background:#78909c;
+    }
+    &.custom {
+        background: #039be5;
+    }
+}
+
+.adh_genre > div {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type=checkbox].ace+.lbl::before, input[type=radio].ace+.lbl::before {
+    margin-right: 10px;
+}
+.fiche {
+    legend {
+        margin-bottom: 0;
+    }
+    font-size:14px;
+    strong {
+        display: block;
+        margin: 16px 0 7px 0;
+    }
+    .jcroppable strong {
+        display: inline;
+        margin:auto;
+    }
+    div.inline {
+        padding: 6px 12px;
+    }
+    span:not(.ace-file-container):not(.ace-file-name) {
+        display: inline-block;
+        background: aliceblue !important;
+        padding: 6px 12px;
+        border-radius: 2px;
+        border: 1px solid #ddefff;
+    }
+    textarea {
+        min-height: 130px
+    }
+}

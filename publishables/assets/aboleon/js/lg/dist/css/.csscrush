@@ -1,0 +1,31 @@
+{
+    "lightgallery.min.crush.css": {
+        "imports": [],
+        "datem_sum": 1484258435,
+        "options": {
+            "minify": true,
+            "boilerplate": false,
+            "plugins": [
+                "rem"
+            ],
+            "settings": {
+                "rem-mode": "px-fallback",
+                "rem-all": "yes"
+            },
+            "formatter": null,
+            "versioning": true,
+            "vars": [],
+            "cache": true,
+            "context": null,
+            "output_file": null,
+            "output_dir": null,
+            "asset_dir": null,
+            "doc_root": null,
+            "vendor_target": "all",
+            "rewrite_import_urls": true,
+            "stat_dump": false,
+            "source_map": false,
+            "newlines": "use-platform"
+        }
+    }
+}

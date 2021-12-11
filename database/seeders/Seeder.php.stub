@@ -1,0 +1,25 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace Database\Seeders\Aboleon\Framework;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Seeder extends \Illuminate\Database\Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+        $this->call(ConfigurablesTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(TeamsSeeder::class);
+
+    }
+}

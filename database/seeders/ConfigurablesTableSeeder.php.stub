@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types = 1);
+
+namespace Database\Seeders\Aboleon\Framework;
+
+use DB;
+use Illuminate\Database\Seeder;
+
+class ConfigurablesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+            DB::table('aboleon_framework_config')->insert([
+                [
+                    'title' => 'Analytics',
+                    'name' => 'analytics',
+                    'type'=>'textarea',
+                    'description'=>'Codes de suivi',
+                ],
+                [
+                    'title' => 'Email de base',
+                    'name' => 'contact_email',
+                    'description'=>"Email de contact utilisé lorsque aucune autre n'est trouvée",
+                    'type'=>'email'
+                ],
+                [
+                    'title' => 'Langues',
+                    'name' => 'select_langs',
+                    'description'=>"Quelles langues sont actives sur le site.",
+                    'type'=>'custom'
+                ],
+            ]
+        );
+    }
+}

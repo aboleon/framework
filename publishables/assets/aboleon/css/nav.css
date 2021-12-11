@@ -1,0 +1,128 @@
+#menu_toggle {
+    i {
+        font-size: 24px;
+    }
+}
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+ul.nav.navbar-nav {
+    li:first-letter {
+        text-transform: uppercase;
+    }
+
+    span {
+        display: inline-block;
+
+        &:first-letter {
+            text-transform: capitalize !important;
+        }
+    }
+}
+
+
+.dropdown-menu > li > {
+    i {
+        background: #F5F5F5;
+        color: #848484;
+        padding: 10px 10px;
+        position: absolute;
+        left: 0;
+        min-width: 34px;
+        text-align: center;
+    }
+
+    a {
+        padding: 7px 20px;
+        text-indent: 14px;
+
+        i.fa-angle-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.dropdown-menu > li:hover > i {
+    background: #347ab6;
+    color: white;
+}
+
+.nav.side-menu {
+     > li {
+        border-bottom: 1px solid hsla(0, 0%, 80%, 0.46);
+
+         &:hover {
+
+             * {
+                 color: white;
+             }
+
+             background: var(--aboleon-hover);
+         }
+        > a {
+            padding: 14px 0 14px 10px;
+            &:hover {
+                text-decoration: none;
+                opacity: 0.8;
+                color: white;
+                background: #a08917;
+            }
+        }
+
+        li {
+            &:hover {
+                background: #aa9840;
+            }
+            a {
+                padding-left: 42px;
+            }
+
+            li a {
+                padding-left: 52px;
+            }
+        }
+
+        &.current-page, &.active {
+            border-right: 5px solid #a08917;
+        }
+    }
+
+    .fa, .fas {
+        margin-right: 4px;
+        margin-left: 6px;
+
+        &.fa-chevron-down {
+            margin-right: 10px;
+        }
+    }
+}
+
+
+
+.nav.side-menu, .nav.child_menu {
+
+    i {
+        color: var(--aboleon);
+    }
+    li a {
+        transition: 200ms ease all;
+        color: #8c8c8a;
+        font-weight: 600;
+
+        &.active {
+            color: white;
+            i {
+                color: white;
+            }
+        }
+    }
+}

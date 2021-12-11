@@ -1,0 +1,49 @@
+{
+    "name": "aboleon/framework",
+    "description": "Aboleon Framework",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "keywords": [
+        "framework",
+        "aboleon"
+    ],
+    "authors": [
+        {
+            "name": "aboleon",
+            "email": "dev@aboleon.media"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.54",
+        "css-crush/css-crush": "^3.0",
+        "laravel/jetstream": "^2.3",
+        "intervention/image": "^2.5",
+        "doctrine/dbal": "^3.1",
+        "aboleon/roles": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ],
+        "psr-4": {
+            "Aboleon\\Framework\\": "src",
+            "Aboleon\\Framework\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aboleon\\Framework\\ServiceProvider",
+                "Aboleon\\Framework\\RouteServiceProvider"
+            ],
+            "aliases": {
+                "ResponseRenderers": "Aboleon\\Framework\\Facades\\ResponseRenderers"
+            }
+        }
+    }
+}

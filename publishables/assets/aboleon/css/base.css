@@ -1,0 +1,41 @@
+@abstract negative-text {
+  text-indent: -9999px;
+}
+@abstract rounded_btn {
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: 200ms ease all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+.spb {
+  justify-content: space-between;
+}
+.val {
+  align-items: center;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.flex {
+  display: flex;
+}
+.hidden {
+  display: none !important;
+}
+* {
+  font-size: 100%;
+  font-family: 'Nunito', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+.relative {
+  position: relative;
+}
+.uppercase {
+  @name ucase;
+  text-transform: uppercase;
+}

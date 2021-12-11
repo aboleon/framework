@@ -1,0 +1,120 @@
+@abstract negative-text {
+  text-indent: -9999px;
+}
+
+@abstract clean {
+  padding:0;margin:0;
+}
+
+@abstract fullBloc {
+  width: 100%; display: block;
+}
+
+@mixin font {
+  font-weight: #(0);
+  font-size: #(1, inherit);
+}
+@mixin display {
+  display: #(0, block);
+  width: #(1, 100%);
+  height: #(2, auto);
+}
+
+@for base in range(0, 100, 5) {
+    .pt-#(base) {
+        padding-top: #(base)px;
+    }
+    .pb-#(base) {
+        padding-bottom: #(base)px;
+    }
+    .pr-#(base) {
+        padding-right: #(base)px;
+    }
+    .pl-#(base) {
+        padding-left: #(base)px;
+    }
+    .mt-#(base) {
+        margin-top: #(base)px;
+    }
+    .mb-#(base) {
+        margin-bottom: #(base)px;
+    }
+}
+.spb {
+  justify-content: space-between;
+}
+.val {
+  align-items: center;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.flex {
+  display: flex;
+}
+.hidden {
+    display: none !important;
+}
+.fade.in {
+  opacity: 1 !important;
+}
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+.relative {
+  position: relative;
+}
+.uppercase {
+  @name ucase;
+  text-transform: uppercase;
+}
+.ucfirst {
+  &:first-letter {
+    @include ucase;
+}
+}
+.text-center {
+  @name text-center;
+  text-align:center;
+}
+.clear {
+  @name clear;
+  clear:both;
+}
+.fleft {
+  @name left;
+  float:left;
+}
+.fright {
+  @name right;
+  float:right;
+}
+.automargin {
+  @name automargin;
+  margin: 0 auto;
+}
+.floats:after {
+  @name floats;
+  content: "";
+  display: table;
+  clear: both;
+}
+.bold {
+  @name bold;
+  font-weight: bold !important;
+}
+.nopadding {
+  @name nopadding;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.inline {
+  @name inline;
+  display: inline-block;
+}
+.ml-20 {
+  margin-left: 20px;
+}
