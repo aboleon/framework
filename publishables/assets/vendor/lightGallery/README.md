@@ -1,26 +1,89 @@
-![travis](https://travis-ci.org/sachinchoolur/lightGallery.svg?branch=master)
-![bower](https://img.shields.io/bower/v/lightgallery.svg)
-![npm](https://img.shields.io/npm/v/lightgallery.svg)
-[![](https://data.jsdelivr.com/v1/package/npm/lightgallery/badge)](https://www.jsdelivr.com/package/npm/lightgallery)
+# lightgallery.js
 
-# lightGallery
-A customizable, modular, responsive, lightbox gallery plugin for jQuery.
-![lightgallery](https://raw.githubusercontent.com/sachinchoolur/lightGallery/master/lib/lg.png)
-Demo
----
-[JQuery lightGallery demo](http://sachinchoolur.github.io/lightGallery/). [Codepen demo](http://codepen.io/sachinchoolur/details/QjLNMM/) 
+![travis](https://travis-ci.org/sachinchoolur/lightgallery.js.svg?branch=master)
+![bower](https://img.shields.io/bower/v/lightgallery.js.svg)
+![npm](https://img.shields.io/npm/v/lightgallery.js.svg)
 
-Main features
+Full featured JavaScript lightbox gallery. No dependencies.
+
+![lightgallery](https://raw.githubusercontent.com/sachinchoolur/lightgallery.js/gh-pages/lightgallery.png)
+
+
+
+## Important notice
+
+- lightgallery.js has been merged with [lightGallery](https://github.com/sachinchoolur/lightGallery). That means, v2 of lightgallery.js is https://www.lightgalleryjs.com/. if you have a lightgallery.js license, this is valid for [lightGallery](https://www.lightgalleryjs.com/) as well. But, since version 2.0 you need to pass the license key as a plugin option. If you alredy have a license, please contact me at contact@lightgallery.js for the license key
+- Completely re-wrote from scratch in typescript 
+- Moved all modules to the main repo for better maintainability.
+- Dropped IE 8 and 9 support. Let me know if you still need support for IE 8 and 9. I’ll consider adding a plugin to add support if there is enough demand.
+- [Website](https://www.lightgalleryjs.com/)
+- [Docs](https://www.lightgalleryjs.com/docs/getting-started/)
+- [Demos](https://www.lightgalleryjs.com/demos/inline/)
+
+
+##### Any questions, ideas, suggestions about v2? please start a [discussion](https://github.com/sachinchoolur/lightGallery/discussions/988).
+
+### New features
+- Pinch to zoom
+- Virtual slides
+- Swipe to close
+- Zoom from the origin
+- Inline gallery
+- Next-generation image formats support(webp, JPEG XL). etc
+- Better customizability
+- Better performance on mobile devices.
+- Dynamically add, remove slides while the gallery is open
+- Comment interface
+- and much more.
+
+
+### How to upgrade
+
+To make the upgrade seamless, v2 follows the API structure as much as possible. But, few settings are removed and a lot of additional settings are added, the way we use public methods is changed slightly and few events are renamed. 
+
+**Initialization** 
+V2 doesn’t require jQuery as a dependancy.
+```js
+lightGallery(document.getElementById('lightgallery'), {
+  plugins: [lgZoom, lgThumbnail,]
+  speed: 500
+  ... other settings
+});
+```
+
+**Plugins**  To avoid polluting global scope, since v2 plugins has to be passed via settings.
+```js
+lightGallery(document.getElementById(‘’lightgallery), {
+     plugins: [lgZoom, lgAutoplay, lgComment, lgFullscreen , lgHash, lgPager, lgRotate, lgShare, lgThumbnail, lgVideo] 
+});
+```
+- Removed in-built support for Dailymotion VK. We Will be adding separate plugins for DailyMotion and VK support 
+- Added Wistia support 
+- HTML videos - Videos can be passed via data-video attribute instead of passing it via hidden div 
+```HTML
+data-video='{"source": [{"src":"/videos/video1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}'
+```
+- Events are renamed - Please take a look at the [documentation](http://sachinchoolur.github.io/lightGallery/v2/docs/events/) 
+- Few settings are added, removed, or renamed. 
+Rather than listing down all the changes here, I’d recommend going through the current settings that you are using and compare them with the new documentation.   
+
+
+--- 
+--- 
 ---
+
+
+
+## Main features
 
 * Fully responsive.
 * Modular architecture with built in plugins.
-* Touch and support for mobile devices.
+* Touch support for mobile devices.
 * Mouse drag supports for desktops.
 * Double-click/Double-tap to see actual size of the image.
 * Animated thumbnails.
-* Social sharing.
-* Youtube Vimeo Dailymotion VK and html5 videos Support.
+* Social media sharing.
+* YouTube, Vimeo, Dailymotion, VK and HTML5 video support.
 * 20+ Hardware-Accelerated CSS3 transitions.
 * Dynamic mode.
 * Full screen support.
@@ -33,162 +96,171 @@ Main features
 * Smart image preloading and code optimization.
 * Keyboard Navigation for desktop.
 * Font icon support.
+* Rotate, flip images.
+* Accessibility support.
 * And many more.
- 
-Browser support
----
-lightgallery supports all major browsers including IE 8 and above.
 
+## Browser support
 
-Installation
----
-#### Install with Bower
+lightgallery supports all major browsers including IE 9 and above.
 
-You can Install  ```lightgallery``` and its modules using the [Bower](http://bower.io) package manager.
+## Installation
 
-```sh
-$ bower install lightgallery --save
-```
-Or Install all modules together
-``` sh
-$ bower install lightgallery lg-thumbnail lg-autoplay lg-video lg-fullscreen lg-pager lg-zoom lg-hash lg-share
-```
+### Install with NPM
 
-#### npm
-
-You can also find ```lightgallery``` on [npm](http://npmjs.org).
+You can install `lightgallery.js` using the [npm](https://www.npmjs.com/) package manager.
 
 ```sh
-$ npm install lightgallery lg-thumbnail lg-autoplay lg-video lg-fullscreen lg-pager lg-zoom lg-hash lg-share
+npm install lightgallery.js
 ```
-#### Download from Github
 
-You can also directly download lightgallery from github.
+You can also find `lightgallery.js` on [Yarn](https://yarnpkg.com/) and [Bower](http://bower.io).
+### Yarn
+```sh
+yarn add lightgallery.js
+```
+### Bower
 
-#### CDN
-If you prefer to use a CDN you can load files via [jsdelivr](https://www.jsdelivr.com/projects/lightgallery) or [cdnjs](https://cdnjs.com/libraries/lightgallery)
+```sh
+bower install lightgallery.js --save
+```
 
-Here is the [jsdelivr collection](https://cdn.jsdelivr.net/combine/npm/lightgallery,npm/lg-autoplay,npm/lg-fullscreen,npm/lg-hash,npm/lg-pager,npm/lg-share,npm/lg-thumbnail,npm/lg-video,npm/lg-zoom) of lightGallery and its modules.
 
-#### Include CSS and Javascript files
-First of all add lightgallery.css in the &lt;head&gt; of the document.
-``` html
+### CDN
+
+http://www.jsdelivr.com/projects/lightgallery.js
+
+### Download from GitHub
+
+You can also directly download lightgallery from GitHub.
+
+## Include CSS and JavaScript files
+
+First of all add lightgallery.css in the `<head>` of the document.
+
+```html
 <head>
-    <link type="text/css" rel="stylesheet" href="css/lightGallery.css" /> 
+    <link rel="stylesheet" href="css/lightgallery.css">
 </head>
 ```
-Then include jQuery and lightgallery.min.js into your document.
-If you want to include any lightgallery plugin you can include it after lightgallery.min.js.
-lightGallery and it's plugins are available in lightgallery-all.js
-``` html
+
+Then include `lightgallery.min.js` into your document.
+If you want to include any lightgallery plugin you can include it after `lightgallery.min.js`.
+
+```html
 <body>
-    ....
-
-    <!-- jQuery version must be >= 1.8.0; -->
-    <script src="jquery.min.js"></script>
-
-    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    ...
 
     <script src="js/lightgallery.min.js"></script>
 
     <!-- lightgallery plugins -->
     <script src="js/lg-thumbnail.min.js"></script>
     <script src="js/lg-fullscreen.min.js"></script>
-</body>  
+</body>
 ```
-lightGallery also supports AMD, CommonJS and ES6 modules.
+
+Lightgallery also supports AMD, CommonJS and ES6 modules.
 When you use AMD make sure that lightgallery.js is loaded before lightgallery modules.
+
 ```js
 require(['./lightgallery.js'], function() {
     require(["./lg-zoom.js", "./lg-thumbnail.js"], function(){
-        $("#lightgallery").lightGallery(); 
+        lightGallery(document.getElementById('lightgallery'));
     });
 });
 ```
-#### The markup
-lightgallery does not force you to use any kind of markup. you can use whatever markup you want. But I suggest you to use the following markup. [Here](http://sachinchoolur.github.io/lightGallery/demos/html-markup.html) you can find the detailed examples of different kind of markups.
-``` html
+
+## The markup
+
+lightgallery does not force you to use any kind of markup. You can use whatever markup you want.
+But i suggest you to use the following markup.
+[Here](https://sachinchoolur.github.io/lightgallery.js/demos/html-markup.html)
+you can find the detailed examples of different kinds of markup.
+
+```html
 <div id="lightgallery">
-  <a href="img/img1.jpg">
-      <img src="img/thumb1.jpg" />
-  </a>
-  <a href="img/img2.jpg">
-      <img src="img/thumb2.jpg" />
-  </a>
-  ...
+    <a href="img/img1.jpg">
+        <img src="img/thumb1.jpg">
+    </a>
+    <a href="img/img2.jpg">
+        <img src="img/thumb2.jpg">
+    </a>
+    ...
 </div>
 ```
-#### Call the plugin
+
+## Call the plugin
+
 Finally you need to initiate the gallery by adding the following code.
-``` javascript
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("#lightgallery").lightGallery(); 
-    });
+
+```js
+<script>
+    lightGallery(document.getElementById('lightgallery'));
 </script>
 ```
 
-Resources
-----
-* [API Reference](http://sachinchoolur.github.io/lightGallery/docs/api.html)
-* [Events](http://sachinchoolur.github.io/lightGallery/docs/api.html#events)
-* [Methods](http://sachinchoolur.github.io/lightGallery/docs/api.html#methods)
-* [Data Attributes](http://sachinchoolur.github.io/lightGallery/docs/api.html#attributes)
-* [Dynamic variables](http://sachinchoolur.github.io/lightGallery/docs/api.html#dynamic)
-* [Sass variables](http://sachinchoolur.github.io/lightGallery/docs/api.html#sass)
-* [Module API](http://sachinchoolur.github.io/lightGallery/docs/plugin-api.html)
-* [Themes](http://sachinchoolur.github.io/lightGallery/themes/)
+## Support lightgallery
 
-Demos 
-----
+If you like lightgallery please support the project by staring the repository or <a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fabout.twitter.com%2Fresources%2Fbuttons&ref_src=twsrc%5Etfw&text=lightgallery%20-%20Full%20featured%20%23javascript%20lightbox%20gallery%2C%20No%20%23jQuery%20-%20http%3A%2F%2Fbit.ly%2F2amlfJe" target="_blank">tweet</a> about this project.
+
+## Resources
+
+* [API Reference](https://sachinchoolur.github.io/lightgallery.js/docs/api.html)
+* [Events](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#events)
+* [Methods](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#methods)
+* [Data Attributes](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#attributes)
+* [Dynamic variables](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#dynamic)
+* [Sass variables](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#sass)
+* [Module API](https://sachinchoolur.github.io/lightgallery.js/docs/plugin-api.html)
+
+## Demos
+
 * Thumbnails
-  * [Gallery with animated thumbnails](http://sachinchoolur.github.io/lightGallery/demos/) 
-  * [Gallery without animated thumbnails](http://sachinchoolur.github.io/lightGallery/demos/#normal-thumb) 
-* Youtube, Vimeo Video Gallery
-  * [Youtube, Vimeo Video Gallery](http://sachinchoolur.github.io/lightGallery/demos/videos.html)
-  * [Video Gallery Without Poster](http://sachinchoolur.github.io/lightGallery/demos/videos.html#video-without-poster)
-  * [Video Player Parameters](http://sachinchoolur.github.io/lightGallery/demos/videos.html#video-player-param)
-  * [Automatically load thumbnails](http://sachinchoolur.github.io/lightGallery/demos/videos.html#auto-thumb)
-* Html5 Video Gallery
-  * [Html5 Video Gallery](http://sachinchoolur.github.io/lightGallery/demos/html5-videos.html)
-  * [Html5 video gallery with videojs](http://sachinchoolur.github.io/lightGallery/demos/html5-videos.html#video-without-poster)
-* [Transitions](http://sachinchoolur.github.io/lightGallery/demos/transitions.html)
-* [Dynamic](http://sachinchoolur.github.io/lightGallery/demos/dynamic.html)
-* [Events](http://sachinchoolur.github.io/lightGallery/demos/events.html)
-* [Methods](http://sachinchoolur.github.io/lightGallery/demos/methods.html)
-* [Iframe. External websites, Google map etc..](http://sachinchoolur.github.io/lightGallery/demos/iframe.html)
-* [Captions](http://sachinchoolur.github.io/lightGallery/demos/captions.html)
+  * [Gallery with animated thumbnails](https://sachinchoolur.github.io/lightgallery.js/demos/)
+  * [Gallery without animated thumbnails](https://sachinchoolur.github.io/lightgallery.js/demos/#normal-thumb)
+* YouTube, Vimeo Video Gallery
+  * [YouTube, Vimeo Video Gallery](https://sachinchoolur.github.io/lightgallery.js/demos/videos.html)
+  * [Video Gallery Without Poster](https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#video-without-poster)
+  * [Video Player Parameters](https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#video-player-param)
+  * [Automatically load thumbnails](https://sachinchoolur.github.io/lightgallery.js/demos/videos.html#auto-thumb)
+* HTML5 Video Gallery
+  * [HTML5 Video Gallery](https://sachinchoolur.github.io/lightgallery.js/demos/html5-videos.html)
+  * [HTML5 video gallery with videojs](https://sachinchoolur.github.io/lightgallery.js/demos/html5-videos.html#video-without-poster)
+* [Transitions](https://sachinchoolur.github.io/lightgallery.js/demos/transitions.html)
+* [Dynamic](https://sachinchoolur.github.io/lightgallery.js/demos/dynamic.html)
+* [Events](https://sachinchoolur.github.io/lightgallery.js/demos/events.html)
+* [Methods](https://sachinchoolur.github.io/lightgallery.js/demos/methods.html)
+* [Iframe. External websites, Google map etc.](https://sachinchoolur.github.io/lightgallery.js/demos/iframe.html)
+* [Captions](https://sachinchoolur.github.io/lightgallery.js/demos/captions.html)
 * Responsive images
-  * [Responsive images](http://sachinchoolur.github.io/lightGallery/demos/responsive.html)
-  * [Responsive images with html5 srcset](http://sachinchoolur.github.io/lightGallery/demos/responsive.html#srcset-demo)
-* [Gallery with fixed size](http://sachinchoolur.github.io/lightGallery/demos/fixed-size.html)
-* [Html Markup](http://sachinchoolur.github.io/lightGallery/demos/html-markup.html)
-* [Facebook comments](http://sachinchoolur.github.io/lightGallery/demos/comment-box.html)
-* [Easing](http://sachinchoolur.github.io/lightGallery/demos/easing.html)
-* [History/hash plugin](http://sachinchoolur.github.io/lightGallery/demos/hash.html)
-* [Angularjs directive](http://sachinchoolur.github.io/lightGallery/demos/angularjs.html)
+  * [Responsive images](https://sachinchoolur.github.io/lightgallery.js/demos/responsive.html)
+  * [Responsive images with HTML5 srcset](https://sachinchoolur.github.io/lightgallery.js/demos/responsive.html#srcset-demo)
+* [Gallery with fixed size](https://sachinchoolur.github.io/lightgallery.js/demos/fixed-size.html)
+* [HTML Markup](https://sachinchoolur.github.io/lightgallery.js/demos/html-markup.html)
+* [Facebook comments](https://sachinchoolur.github.io/lightgallery.js/demos/comment-box.html)
+* [Easing](https://sachinchoolur.github.io/lightgallery.js/demos/easing.html)
+* [History/hash plugin](https://sachinchoolur.github.io/lightgallery.js/demos/hash.html)
+* [Social media share](https://sachinchoolur.github.io/lightgallery.js/demos/share.html)
 
-Modules
-----
-1. Thumbnail - [GItHub](https://github.com/sachinchoolur/lg-thumbnail) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-thumbnial)
-2. Autoplay - [GItHub](https://github.com/sachinchoolur/lg-autoplay) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-autoplay)
-3. Video - [GItHub](https://github.com/sachinchoolur/lg-video) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-video)
-4. Fullscreen - [GItHub](https://github.com/sachinchoolur/lg-fullscreen) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-fullscreen)
-5. Pager - [GItHub](https://github.com/sachinchoolur/lg-pager) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-pager)
-6. Zoom - [GItHub](https://github.com/sachinchoolur/lg-zoom) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-zoom)
-7. Hash - [GItHub](https://github.com/sachinchoolur/lg-hash) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-hash)
-8. Share - [GItHub](https://github.com/sachinchoolur/lg-share) - [Docs](https://sachinchoolur.github.io/lightGallery/docs/api.html#lg-share)
+## Built in modules
 
-9. exif - [GitHub](https://github.com/amcolash/lg-exif) - Author - [Andrew McOlash
-](https://github.com/amcolash)
+1. Thumbnail - [GItHub](https://github.com/sachinchoolur/lg-thumbnail.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-thumbnial)
+2. Autoplay - [GItHub](https://github.com/sachinchoolur/lg-autoplay.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-autoplay)
+3. Video - [GItHub](https://github.com/sachinchoolur/lg-video.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-video)
+4. Fullscreen - [GItHub](https://github.com/sachinchoolur/lg-fullscreen.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-fullscreen)
+5. Pager - [GItHub](https://github.com/sachinchoolur/lg-pager.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-pager)
+6. Zoom - [GItHub](https://github.com/sachinchoolur/lg-zoom.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-zoom)
+7. Hash - [GItHub](https://github.com/sachinchoolur/lg-hash.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-hash)
+8. Share - [GItHub](https://github.com/sachinchoolur/lg-share.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-share)
+8. Rotate - [GItHub](https://github.com/sachinchoolur/lg-rotate.js) - [Docs](https://sachinchoolur.github.io/lightgallery.js/docs/api.html#lg-rotate)
 
 License
 ---
 
 #### Commercial license
-If you want to use lightGallery to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a lightGallery Commercial License at [uplabs.com/posts/lightgallery-plugin](https://www.uplabs.com/posts/lightgallery-plugin)
+If you want to use lightgallery.js to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. [Read more about the commercial license](https://www.lightgalleryjs.com/license/)
 
 #### Open source license
 
 If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use this project under the terms of the GPLv3.
+

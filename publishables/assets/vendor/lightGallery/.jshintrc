@@ -1,7 +1,8 @@
 {
   "node": true,
   "browser": true,
-  "esnext": true,
+  "esversion": 6,
+  "module": true,
   "bitwise": true,
   "camelcase": true,
   "curly": true,
@@ -14,5 +15,9 @@
   "quotmark": "single",
   "undef": true,
   "unused": true,
-  "strict": true
+  "strict": true,
+  "globals": {
+    "utils": true,
+    "picturefill": true
+  }
 }

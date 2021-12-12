@@ -5,11 +5,12 @@ if (session_id() == '') {
 }
 
 mb_internal_encoding('UTF-8');
-mb_http_output('UTF-8');
+mb_http_output();
+mb_http_input();
 mb_language('uni');
 mb_regex_encoding('UTF-8');
 ob_start('mb_output_handler');
-date_default_timezone_set('Europe/Paris');
+date_default_timezone_set('Europe/Rome');
 setlocale(LC_CTYPE, 'en_US'); //correct transliteration
 
 /*
@@ -142,7 +143,7 @@ $config = array(
     | path from ftp_base_folder to base of thumbs folder with start and final /
     |---------------------------------------------------------------------------
     */
-    'ftp_thumbs_dir' => '/thumbs/',
+    'ftp_thumbs_dir' => '/media/userfiles_thumbs/',
     'ftp_ssl' => false,
     'ftp_port' => 21,
 
@@ -380,7 +381,7 @@ $config = array(
     //**********************
     //Allowed extensions (lowercase insert)
     //**********************
-    'ext_img'                                 => array( 'jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'ico', 'webp' ), //Images
+    'ext_img'                                 => array( 'jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'ico' ), //Images
     'ext_file'                                => array( 'doc', 'docx', 'rtf', 'pdf', 'xls', 'xlsx', 'txt', 'csv', 'html', 'xhtml', 'psd', 'sql', 'log', 'fla', 'xml', 'ade', 'adp', 'mdb', 'accdb', 'ppt', 'pptx', 'odt', 'ots', 'ott', 'odb', 'odg', 'otp', 'otg', 'odf', 'ods', 'odp', 'css', 'ai', 'kmz','dwg', 'dxf', 'hpgl', 'plt', 'spl', 'step', 'stp', 'iges', 'igs', 'sat', 'cgm', 'tiff',''), //Files
     'ext_video'                               => array( 'mov', 'mpeg', 'm4v', 'mp4', 'avi', 'mpg', 'wma', "flv", "webm" ), //Video
     'ext_music'                               => array( 'mp3', 'mpga', 'm4a', 'ac3', 'aiff', 'mid', 'ogg', 'wav' ), //Audio
@@ -616,10 +617,3 @@ return array_merge(
         ),
     )
 );
-/*
-echo '<pre>';
-print_r($config);
-
-echo '</pre>';
-exit;
-*/
