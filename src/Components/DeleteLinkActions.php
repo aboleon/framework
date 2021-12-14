@@ -10,6 +10,7 @@ class DeleteLinkActions extends Component
     public function __construct(
         public string $modalreference,
         public string $title,
+        public string $icon=''
     ) {
         $this->title = $this->title ?? __('crm.deletion');
     }
