@@ -26,7 +26,7 @@
 <x-jet-banner/>
 <div class="container body">
 
-    <div class="col-md-3 left_col bg-white border-b border-gray-100">
+    <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
                 <nav>
