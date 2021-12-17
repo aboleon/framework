@@ -6,7 +6,10 @@ use Illuminate\View\Component;
 
 class Pagination extends Component
 {
-    public function __construct(public object $object)
+    public function __construct(
+        public object $object,
+        public string $view = ''
+    )
     {
     }
 
