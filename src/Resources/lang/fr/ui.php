@@ -278,7 +278,6 @@ return [
     'leave_impersonation' => 'Quitter l\'impersonification',
     'impersonate' => 'Impersonnifier cet utilisateur',
     'impersonation_message' => "Vous interagissez sous le compte de l'utilisateur :user ",
-
     'created' => 'Création',
     'email_address' => 'Adresse e-mail',
     'services' => 'Prestation|Prestations',
