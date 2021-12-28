@@ -13,7 +13,7 @@ trait Translation
     {
 
     }
-    public function translation(string $key, string $locale): string
+    public function translation(string $key, string $locale): string|array
     {
 
         if (array_key_exists($key, $this->getTranslations())) {
