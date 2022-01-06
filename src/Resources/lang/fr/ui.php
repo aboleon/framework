@@ -252,7 +252,7 @@ return [
         'delete' => 'Supprimer',
         'modify' => "Modifier",
         'confirm' => "Confirmer",
-        'preview' => 'Previsualiser'
+        'preview' => 'Prévisualiser'
     ],
     'ask_delete' => "Étes-vous sur de vouloir supprimer",
     'role' => [

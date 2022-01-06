@@ -33,7 +33,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         $this->app->bind('aboleon_response_renderers', function ($app) {
             return new ResponseRenderers();
         });
-
     }
 
     public function boot()
