@@ -72,7 +72,6 @@ class MediaUploader extends Model
 
     public function staticUpload(object $object, array $config)
     {
-
         if (strstr($this->uploaded_filename, 'image')) {
             $this->uploaded_file_config = $config;
             $this->uploaded_type = 'image';
@@ -146,7 +145,6 @@ class MediaUploader extends Model
         $this->response['file_type'] = $this->uploaded_filename;
         $this->response['uploaded_image_thumb'] = asset($object->uploadParams['dir'].'th_' . $this->response['filename']);
         $this->response['uploaded_image'] = asset($object->uploadParams['dir'] . $this->response['filename']);
-
 
     }
 
